@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Kiểm tra email</title>
+    <meta property="og:title" content="Kiểm tra email">
+    <meta property="og:type" content="website">
+
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Source+Sans+Pro:300|Work+Sans:400,500,600'>
+
+    <%= stylesheet_link_tag    'home', media: 'all' %>
+    <%= javascript_include_tag 'home' %>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="stage" id="stage">
+      <div class="block polyledger-ribbon p-y-lg">
+        <div class="container text-center">
+          <h2>Kiểm tra ngay</h2>
+          <p class="lead">Kiểm tra email có nguy cơ lộ mật khẩu.<p>
+          <form action="/check_email" method="POST" class="form-inline" id="send">
+            <input type="email" name="your_email" placeholder="Nhập email" class="form-control m-b">
+            <input class="btn btn-primary m-b" type="submit" value="Kiểm tra">
+          </form>
+          <p class="lead"><%= params[:email] %><p>
+          <p> <%= params[:password] %> </p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

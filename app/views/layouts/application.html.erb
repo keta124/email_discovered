@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Giá Coin 24h</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+  </head>
+
+  <body class="top-navigation">
+
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+        <nav class="navbar navbar-static-top" role="navigation">
+            <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <i class="fa fa-reorder"></i>
+                </button>
+                <a href="/" class="navbar-brand">Giá Coin 24h</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a aria-expanded="false" role="button" href="/">Alerts</a>
+                    </li>
+                    <li>
+                        <a aria-expanded="false" role="button" href="/bittrex">Bittrex</a>
+                    </li>
+                    <li class="active">
+                        <a aria-expanded="false" role="button" href="/charging">Add Credits</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Tài khoản <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li>
+                                <a href="/settings"><i class="fa fa-cogs"></i> Quản lý tài khoản</a>
+                            </li>
+                            <li>
+                              <%= link_to destroy_user_session_path, method: :delete do %>
+                                <i class="fa fa-sign-out"></i> Log out
+                              <% end %>
+                           </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="wrapper wrapper-content">
+            <div class="container">
+                <p><%= notice %></p>
+                <%= yield %>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                © 2017 EverestBit
+            </div>
+            <div>
+                <a href="#">Home</a>
+                /
+                <a href="#">Careers</a>
+                /
+                <a href="#">Legal & Privacy</a>
+            </div>
+        </div>
+
+        </div>
+        </div>
+        </body>
+</html>
